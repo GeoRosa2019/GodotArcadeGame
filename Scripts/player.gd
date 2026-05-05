@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
+@export var speed: float = 100.0
+var direction = 0.0
 
-const SPEED = 300.0
-
-var velocity = Vector2(300, 200)  # diagonal movement
-  
 func _physics_process(delta):
-	position += velocity * delta
-	velocity.y = -velocity.y
-	velocity.x = -velocity.x
+	if Input.is_action_pressed("move_up"):
+		direction = -1.0
+	elif Input.is_action_pressed("move_down"):
+		direction = 1.0
+
+	velocity = Vector2(0.0, direction * speed)
+	move_and_slide()
