@@ -1,11 +1,33 @@
-extends RigidBody2D
+extends CharacterBody2D
 
+@export var speed := 500.0
+var launched = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _ready():
+	velocity = Vector2.ZERO
+	
+func _process(delta):
+	if not launched and Input.is_action_just_pressed("space_button"):
+		launched = true
+		randomize_direction()
 
+func randomize_direction():
+	# Randomly choose left or right
+	var x_direction = [-1, 1].pick_random()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	# Random vertical angle
+	var y_direction = randf_range(-0.6, 0.6)
+
+	# Create normalized direction vector
+	velocity = Vector2(x_direction, y_direction).normalized() * speed
+
+func _physics_process(delta):
+	
+	var collision = move_and_collide(velocity * delta)
+
+	if collision:
+		# Bounce using collision normal
+		velocity = velocity.bounce(collision.get_normal())
+
+		# Optional: slightly increase speed over time
+		velocity *= 1.05

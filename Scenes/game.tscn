@@ -2,18 +2,23 @@
 
 [ext_resource type="PackedScene" uid="uid://bbgq21qgtiv1y" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="PackedScene" uid="uid://b6nqulstgu038" path="res://Scenes/ball.tscn" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://bisu3qgtvvsl" path="res://Scenes/cpu.tscn" id="2_wowpa"]
 [ext_resource type="PackedScene" uid="uid://dsircs1b07ld6" path="res://Scenes/boarders.tscn" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://b83jtfkvfjk3b" path="res://Scenes/score_zone.tscn" id="4_3dryh"]
 
 [node name="Game" type="Node2D" unique_id=102264006]
 
 [node name="Player" parent="." unique_id=582100398 instance=ExtResource("1_ebmjs")]
-position = Vector2(491, 3)
+position = Vector2(491, 5)
+
+[node name="CPU" parent="." unique_id=1763461983 instance=ExtResource("2_wowpa")]
+position = Vector2(-535, 1)
+speed = 500.0
+
+[node name="Ball" parent="." unique_id=401520195 instance=ExtResource("2_qxrlw")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1928103235]
-
-[node name="Ball" parent="." unique_id=1617145105 instance=ExtResource("2_qxrlw")]
-position = Vector2(3, 1)
+position = Vector2(4, 1)
 
 [node name="Borders" type="Node" parent="." unique_id=903860754]
 
