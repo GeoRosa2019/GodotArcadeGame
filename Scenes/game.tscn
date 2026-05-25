@@ -14,6 +14,24 @@
 unique_name_in_owner = true
 script = ExtResource("1_i6g32")
 
+[node name="Label" type="Node" parent="GameManager" unique_id=1692483071]
+
+[node name="PlayerScore" type="Label" parent="GameManager/Label" unique_id=1981259915]
+offset_left = 89.0
+offset_top = -232.0
+offset_right = 129.0
+offset_bottom = -209.0
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="CPUScore" type="Label" parent="GameManager/Label" unique_id=1341335460]
+offset_left = -91.0
+offset_top = -232.0
+offset_right = -51.0
+offset_bottom = -209.0
+theme_override_font_sizes/font_size = 50
+text = "0"
+
 [node name="Player" parent="." unique_id=582100398 instance=ExtResource("1_ebmjs")]
 position = Vector2(491, 5)
 
@@ -46,8 +64,10 @@ scale = Vector2(1, 31.080002)
 position = Vector2(580, 8)
 scale = Vector2(1.16, 33.599205)
 
-[node name="Label" type="Node" parent="." unique_id=1692483071]
-
-[node name="Label" type="Label" parent="Label" unique_id=1981259915]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1076885733]
+visibility_layer = 2
+offset_left = -12.0
+offset_top = -314.0
+offset_right = 28.0
+offset_bottom = -274.0
+scale = Vector2(0.5901489, 15.788577)
