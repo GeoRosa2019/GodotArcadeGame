@@ -31,3 +31,9 @@ func _physics_process(delta):
 
 		# Optional: slightly increase speed over time
 		velocity *= 1.05
+
+# Resets the ball after scoring
+func reset():
+	position = Vector2(0, -1)
+	velocity = Vector2.ZERO
+	launched = false
